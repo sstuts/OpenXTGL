@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{18d6d4de-d20b-43ef-8800-0bc87a97502f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\error.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="errorspu_init.c" />
+  </ItemGroup>
+</Project>

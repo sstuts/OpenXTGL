@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{89d2f856-3a14-45e1-be7a-b330e6876714}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Scripts\state_buffer_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_current_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_fog_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_get.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_hint_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_isenabled.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_lighting_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_line_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_multisample_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_polygon_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_regcombiner_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\state_viewport_gen.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\state_attrib.c" />
+    <ClCompile Include="..\state_buffer.c" />
+    <ClCompile Include="..\state_bufferobject.c" />
+    <ClCompile Include="..\state_client.c" />
+    <ClCompile Include="..\state_current.c" />
+    <ClCompile Include="..\state_diff.c" />
+    <ClCompile Include="..\state_enable.c" />
+    <ClCompile Include="..\state_error.c" />
+    <ClCompile Include="..\state_evaluators.c" />
+    <ClCompile Include="..\state_feedback.c" />
+    <ClCompile Include="..\state_fence.c" />
+    <ClCompile Include="..\state_flush.c" />
+    <ClCompile Include="..\state_fog.c" />
+    <ClCompile Include="..\state_framebuffer.c" />
+    <ClCompile Include="..\state_getstring.c" />
+    <ClCompile Include="..\state_glsl.c" />
+    <ClCompile Include="..\state_hint.c" />
+    <ClCompile Include="..\state_init.c" />
+    <ClCompile Include="..\state_lighting.c" />
+    <ClCompile Include="..\state_limits.c" />
+    <ClCompile Include="..\state_line.c" />
+    <ClCompile Include="..\state_lists.c" />
+    <ClCompile Include="..\state_multisample.c" />
+    <ClCompile Include="..\state_occlude.c" />
+    <ClCompile Include="..\state_pixel.c" />
+    <ClCompile Include="..\state_point.c" />
+    <ClCompile Include="..\state_polygon.c" />
+    <ClCompile Include="..\state_program.c" />
+    <ClCompile Include="..\state_rasterpos.c" />
+    <ClCompile Include="..\state_regcombiner.c" />
+    <ClCompile Include="..\state_stencil.c" />
+    <ClCompile Include="..\state_texdiff.c" />
+    <ClCompile Include="..\state_teximage.c" />
+    <ClCompile Include="..\state_texture.c" />
+    <ClCompile Include="..\state_transform.c" />
+    <ClCompile Include="..\state_viewport.c" />
+    <ClCompile Include="..\dump.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Scripts\state.def">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="..\state_snapshot.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\state.h" />
+    <ClInclude Include="..\state_bits_globalop.h" />
+    <ClInclude Include="..\state_internals.h" />
+  </ItemGroup>
+</Project>

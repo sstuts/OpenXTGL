@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FCCC9643-489B-461F-8FF8-AD5B163DB55B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>RTR3_UTIL_HOST</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\gxlogl.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\gxlogl.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\gxlogl.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\gxlogl.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;IPRT_NT_USE_WINTERNL;RT_NO_GIP;_AMD64_;IN_RT_STATIC;IN_RT_R3;IN_RING3;WINDOWS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(INCLUDE_DIR);.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;RT_NO_GIP;_AMD64_;IN_RT_STATIC;IN_RT_R3;IN_RING3;WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(INCLUDE_DIR);.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="alloc-ef.h" />
+    <ClInclude Include="avl_Base.cpp.h" />
+    <ClInclude Include="avl_Destroy.cpp.h" />
+    <ClInclude Include="avl_DoWithAll.cpp.h" />
+    <ClInclude Include="avl_Enum.cpp.h" />
+    <ClInclude Include="avl_Get.cpp.h" />
+    <ClInclude Include="avl_GetBestFit.cpp.h" />
+    <ClInclude Include="avl_Range.cpp.h" />
+    <ClInclude Include="avl_RemoveBestFit.cpp.h" />
+    <ClInclude Include="avl_RemoveNode.cpp.h" />
+    <ClInclude Include="errmsgcomdata.h" />
+    <ClInclude Include="errmsgdata.h" />
+    <ClInclude Include="init.h" />
+    <ClInclude Include="internal-r3-nt.h" />
+    <ClInclude Include="internal-r3-win.h" />
+    <ClInclude Include="ldrELFRelocatable.cpp.h" />
+    <ClInclude Include="rtpath-expand-template.cpp.h" />
+    <ClInclude Include="RTPathParse.cpp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alloc-win.cpp" />
+    <ClCompile Include="alloc.cpp" />
+    <ClCompile Include="allocR3.cpp" />
+    <ClCompile Include="alt-md5.cpp" />
+    <ClCompile Include="assert.cpp" />
+    <ClCompile Include="avlgcphys.cpp" />
+    <ClCompile Include="avlgcptr.cpp" />
+    <ClCompile Include="avlhcphys.cpp" />
+    <ClCompile Include="avllu32.cpp" />
+    <ClCompile Include="avlogcphys.cpp" />
+    <ClCompile Include="avlogcptr.cpp" />
+    <ClCompile Include="avlohcphys.cpp" />
+    <ClCompile Include="avloioport.cpp" />
+    <ClCompile Include="avlou32.cpp" />
+    <ClCompile Include="avlpv.cpp" />
+    <ClCompile Include="avlrfoff.cpp" />
+    <ClCompile Include="avlrgcptr.cpp" />
+    <ClCompile Include="avlrogcphys.cpp" />
+    <ClCompile Include="avlrogcptr.cpp" />
+    <ClCompile Include="avlroioport.cpp" />
+    <ClCompile Include="avlroogcptr.cpp" />
+    <ClCompile Include="avlrpv.cpp" />
+    <ClCompile Include="avlru64.cpp" />
+    <ClCompile Include="avlruintptr.cpp" />
+    <ClCompile Include="avlu32.cpp" />
+    <ClCompile Include="avluintptr.cpp" />
+    <ClCompile Include="avlul.cpp" />
+    <ClCompile Include="comparepaths.cpp" />
+    <ClCompile Include="critsect-generic.cpp" />
+    <ClCompile Include="critsectrw-generic.cpp" />
+    <ClCompile Include="dbg.cpp" />
+    <ClCompile Include="dbgas.cpp" />
+    <ClCompile Include="dbgcfg.cpp" />
+    <ClCompile Include="dbgmod.cpp" />
+    <ClCompile Include="dbgmodcodeview.cpp" />
+    <ClCompile Include="dbgmodcontainer.cpp" />
+    <ClCompile Include="dbgmoddbghelp.cpp" />
+    <ClCompile Include="dbgmoddeferred.cpp" />
+    <ClCompile Include="dbgmoddwarf.cpp" />
+    <ClCompile Include="dbgmodexports.cpp" />
+    <ClCompile Include="dbgmodldr.cpp" />
+    <ClCompile Include="dbgmodnm.cpp" />
+    <ClCompile Include="dir-win.cpp" />
+    <ClCompile Include="dir.cpp" />
+    <ClCompile Include="direnum-win.cpp" />
+    <ClCompile Include="dllmain-win.cpp" />
+    <ClCompile Include="env-generic.cpp" />
+    <ClCompile Include="env-win.cpp" />
+    <ClCompile Include="errinfo.cpp" />
+    <ClCompile Include="errmsg.cpp" />
+    <ClCompile Include="errmsgwin.cpp" />
+    <ClCompile Include="errvars-generic.cpp" />
+    <ClCompile Include="fileaio-win.cpp" />
+    <ClCompile Include="fileio-win.cpp" />
+    <ClCompile Include="fileio.cpp" />
+    <None Include="fs-nt.cpp" />
+    <ClCompile Include="fs.cpp" />
+    <ClCompile Include="init-win.cpp" />
+    <ClCompile Include="init.cpp" />
+    <ClCompile Include="ldr.cpp" />
+    <ClCompile Include="ldrELF.cpp" />
+    <ClCompile Include="ldrEx.cpp" />
+    <ClCompile Include="ldrFile.cpp" />
+    <ClCompile Include="ldrMemory.cpp" />
+    <ClCompile Include="ldrNative-win.cpp" />
+    <ClCompile Include="ldrNative.cpp" />
+    <ClCompile Include="ldrPE.cpp" />
+    <ClCompile Include="lockvalidator.cpp" />
+    <ClCompile Include="log-vbox.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="logellipsis.cpp" />
+    <ClCompile Include="logformat.cpp" />
+    <ClCompile Include="logrel.cpp" />
+    <ClCompile Include="logrelellipsis.cpp" />
+    <ClCompile Include="md5str.cpp" />
+    <ClCompile Include="memcache.cpp" />
+    <ClCompile Include="once.cpp" />
+    <ClCompile Include="openssl-sha1.cpp" />
+    <ClCompile Include="path-win.cpp" />
+    <ClCompile Include="path.cpp" />
+    <None Include="pathint-nt.cpp" />
+    <ClCompile Include="process-win.cpp" />
+    <ClCompile Include="process.cpp" />
+    <ClCompile Include="rand.cpp" />
+    <ClCompile Include="randadv.cpp" />
+    <ClCompile Include="randparkmiller.cpp" />
+    <ClCompile Include="RTAssertMsg1Weak.cpp" />
+    <ClCompile Include="RTAssertMsg2AddWeak.cpp" />
+    <ClCompile Include="RTAssertMsg2AddWeakV.cpp" />
+    <ClCompile Include="RTAssertMsg2Weak.cpp" />
+    <ClCompile Include="RTAssertMsg2WeakV.cpp" />
+    <ClCompile Include="RTAssertShouldPanic-generic.cpp" />
+    <ClCompile Include="RTDirExists-generic.cpp" />
+    <ClCompile Include="RTErrConvertFromErrno.cpp" />
+    <ClCompile Include="RTErrConvertFromNtStatus.cpp" />
+    <ClCompile Include="RTErrConvertFromWin32.cpp" />
+    <ClCompile Include="RTErrConvertToErrno.cpp" />
+    <ClCompile Include="RTFileExists-generic.cpp" />
+    <None Include="rtFileNativeSetAttributes-win.cpp" />
+    <ClCompile Include="RTLogWriteDebugger-generic.cpp" />
+    <ClCompile Include="RTLogWriteStdErr-generic.cpp" />
+    <ClCompile Include="RTLogWriteStdOut-generic.cpp" />
+    <ClCompile Include="RTLogWriteUser-generic.cpp" />
+    <ClCompile Include="RTPathAbs-generic.cpp" />
+    <ClCompile Include="RTPathAppend.cpp" />
+    <ClCompile Include="RTPathAppendEx.cpp" />
+    <ClCompile Include="RTPathChangeToDosSlashes.cpp" />
+    <ClCompile Include="RTPathChangeToUnixSlashes.cpp" />
+    <ClCompile Include="RTPathExt.cpp" />
+    <ClCompile Include="RTPathFilename.cpp" />
+    <ClCompile Include="RTPathGetCurrentDrive-generic.cpp" />
+    <ClCompile Include="RTPathHasExt.cpp" />
+    <ClCompile Include="RTPathHasPath.cpp" />
+    <ClCompile Include="RTPathIsSame-generic.cpp" />
+    <ClCompile Include="RTPathJoinA.cpp" />
+    <ClCompile Include="RTPathParse.cpp" />
+    <ClCompile Include="RTPathParseSimple.cpp" />
+    <ClCompile Include="rtPathRootSpecLen.cpp" />
+    <ClCompile Include="RTPathSplit.cpp" />
+    <ClCompile Include="RTPathSplitA.cpp" />
+    <ClCompile Include="RTPathSplitReassemble.cpp" />
+    <ClCompile Include="RTPathStartsWithRoot.cpp" />
+    <ClCompile Include="RTPathStripExt.cpp" />
+    <ClCompile Include="RTPathStripFilename.cpp" />
+    <ClCompile Include="RTPathStripTrailingSlash.cpp" />
+    <ClCompile Include="rtPathVolumeSpecLen.cpp" />
+    <ClCompile Include="rtProcInitExePath-win.cpp" />
+    <ClCompile Include="RTRandAdvCreateSystemFaster-generic.cpp" />
+    <ClCompile Include="RTSemEventMultiWait-generic.cpp" />
+    <ClCompile Include="RTSemEventMultiWaitNoResume-2-ex-generic.cpp" />
+    <ClCompile Include="RTSemEventWait-generic.cpp" />
+    <ClCompile Include="RTStrCat.cpp" />
+    <ClCompile Include="RTStrCmp.cpp" />
+    <ClCompile Include="RTStrCopy.cpp" />
+    <ClCompile Include="RTStrCopyEx.cpp" />
+    <ClCompile Include="RTStrCopyP.cpp" />
+    <ClCompile Include="RTStrNCmp.cpp" />
+    <ClCompile Include="RTStrNLen.cpp" />
+    <ClCompile Include="RTSystemShutdown-win.cpp" />
+    <ClCompile Include="RTUtf16End.cpp" />
+    <ClCompile Include="RTUtf16NLenEx.cpp" />
+    <ClCompile Include="sched-win.cpp" />
+    <ClCompile Include="semevent-win.cpp" />
+    <ClCompile Include="semeventmulti-win.cpp" />
+    <ClCompile Include="semfastmutex-generic.cpp" />
+    <ClCompile Include="semmutex-win.cpp" />
+    <ClCompile Include="semrw-generic.cpp" />
+    <ClCompile Include="semspingpong.cpp" />
+    <ClCompile Include="semspinmutex-r3-generic.cpp" />
+    <ClCompile Include="semxroads-generic.cpp" />
+    <ClCompile Include="sg.cpp" />
+    <ClCompile Include="shellsort.cpp" />
+    <ClCompile Include="simplepattern.cpp" />
+    <ClCompile Include="spinlock-generic.cpp" />
+    <ClCompile Include="straprintf.cpp" />
+    <ClCompile Include="strcache.cpp" />
+    <ClCompile Include="stream.cpp" />
+    <ClCompile Include="strformat.cpp" />
+    <ClCompile Include="strformatrt.cpp" />
+    <ClCompile Include="strformattype.cpp" />
+    <ClCompile Include="strhash1.cpp" />
+    <ClCompile Include="stringalloc.cpp" />
+    <ClCompile Include="strprintf.cpp" />
+    <ClCompile Include="strspace.cpp" />
+    <ClCompile Include="strstrip.cpp" />
+    <ClCompile Include="strtonum.cpp" />
+    <ClCompile Include="table.cpp" />
+    <ClCompile Include="term.cpp" />
+    <ClCompile Include="thread-win.cpp" />
+    <ClCompile Include="thread.cpp" />
+    <ClCompile Include="thread2-win.cpp" />
+    <ClCompile Include="time-nt.cpp" />
+    <ClCompile Include="time.cpp" />
+    <ClCompile Include="timeprog.cpp" />
+    <ClCompile Include="timesup.cpp" />
+    <ClCompile Include="uni.cpp" />
+    <ClCompile Include="unidata-flags.cpp" />
+    <ClCompile Include="unidata-lower.cpp" />
+    <ClCompile Include="unidata-upper.cpp" />
+    <ClCompile Include="utf-16.cpp" />
+    <ClCompile Include="utf-8-case.cpp" />
+    <ClCompile Include="utf-8-case2.cpp" />
+    <ClCompile Include="utf-8.cpp" />
+    <ClCompile Include="utf8-win.cpp" />
+    <ClCompile Include="uuid-generic.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="RTR3_ASM\ASMAtomicBitClear.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="RTR3_ASM\ASMAtomicCmpXchgU8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="RTR3_ASM\ASMAtomicXchgU16.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="RTR3_ASM\ASMAtomicXchgU8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="RTR3_ASM\ASMBitFirstClear.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="RTR3_ASM\ASMBitFirstSet.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="RTR3_ASM\ASMNopPause.asm">
+      <FileType>Document</FileType>
+    </MASM>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

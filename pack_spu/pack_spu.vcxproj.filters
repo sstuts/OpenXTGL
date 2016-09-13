@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Scripts\packspu.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\packspu_beginend.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\packspu_flush.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\packspu_get.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="packspu_bufferobject.c" />
+    <ClCompile Include="packspu_client.c" />
+    <ClCompile Include="packspu_config.c" />
+    <ClCompile Include="packspu_context.c" />
+    <ClCompile Include="packspu_framebuffer.c" />
+    <ClCompile Include="packspu_getshaders.c" />
+    <ClCompile Include="packspu_getstring.c" />
+    <ClCompile Include="packspu_glsl.c" />
+    <ClCompile Include="packspu_init.c" />
+    <ClCompile Include="packspu_misc.c" />
+    <ClCompile Include="packspu_net.c" />
+    <ClCompile Include="packspu_pixel.c" />
+    <ClCompile Include="packspu_swapbuf.c" />
+    <ClCompile Include="packspu_texture.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\packspu_proto.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="packspu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{15d3cf96-07c5-439b-adfb-edcf17bf38b7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pack.def" />
+  </ItemGroup>
+</Project>

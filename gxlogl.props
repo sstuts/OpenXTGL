@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <TOP>$(MSBuildThisFileDirectory)</TOP>
+    <PYTHON>C:\PYTHON35-32\python</PYTHON>
+    <API_PARSER_DIR>$(TOP)glapi_parser</API_PARSER_DIR>
+    <INCLUDE_DIR>$(TOP)include\</INCLUDE_DIR>
+    <SOURCEDIR>..\</SOURCEDIR>
+    <OPENSSL_DIR>C:\OpenSSL-Win64\</OPENSSL_DIR>
+    <PACKER_SCRIPTS>$(TOP)\packer\scripts</PACKER_SCRIPTS>
+    <SERVER_LIB>$(TOP)serverLib\Scripts</SERVER_LIB>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>WINDOWS;RT_OS_WINDOWS;IN_RING3;_UNICODE;UNICODE;CHROMIUM_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="TOP">
+      <Value>$(TOP)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="PYTHON">
+      <Value>$(PYTHON)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="API_PARSER_DIR">
+      <Value>$(API_PARSER_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="INCLUDE_DIR">
+      <Value>$(INCLUDE_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="SOURCEDIR">
+      <Value>$(SOURCEDIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OPENSSL_DIR">
+      <Value>$(OPENSSL_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="PACKER_SCRIPTS">
+      <Value>$(PACKER_SCRIPTS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="SERVER_LIB">
+      <Value>$(SERVER_LIB)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

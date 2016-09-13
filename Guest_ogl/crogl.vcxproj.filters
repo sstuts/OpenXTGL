@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{29c16037-fb65-4a0a-98dd-52e737717483}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\getprocaddress.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\NULLfuncs.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\tsfuncs.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\windows_exports.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="context.c" />
+    <ClCompile Include="icd_drv.c" />
+    <ClCompile Include="load.c" />
+    <ClCompile Include="stub.c" />
+    <ClCompile Include="wgl.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\cr_gl.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="icd_drv.h" />
+    <ClInclude Include="stub.h" />
+    <ClInclude Include="VBoxICDList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\cropengl-x86.def">
+      <Filter>Generated Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

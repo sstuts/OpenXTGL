@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{997d8972-fc7e-495a-a6f6-44e1bb0ce15d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\unpack_extend.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unpacker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\unpack.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unpack_arrays.c" />
+    <ClCompile Include="unpack_bounds.c" />
+    <ClCompile Include="unpack_bufferobject.c" />
+    <ClCompile Include="unpack_calllists.c" />
+    <ClCompile Include="unpack_clipplane.c" />
+    <ClCompile Include="unpack_context.c" />
+    <ClCompile Include="unpack_drawpixels.c" />
+    <ClCompile Include="unpack_fence.c" />
+    <ClCompile Include="unpack_fog.c" />
+    <ClCompile Include="unpack_framebuffer.c" />
+    <ClCompile Include="unpack_lights.c" />
+    <ClCompile Include="unpack_map.c" />
+    <ClCompile Include="unpack_materials.c" />
+    <ClCompile Include="unpack_matrices.c" />
+    <ClCompile Include="unpack_misc.c" />
+    <ClCompile Include="unpack_pixelmap.c" />
+    <ClCompile Include="unpack_point.c" />
+    <ClCompile Include="unpack_program.c" />
+    <ClCompile Include="unpack_readpixels.c" />
+    <ClCompile Include="unpack_regcombiner.c" />
+    <ClCompile Include="unpack_shaders.c" />
+    <ClCompile Include="unpack_stipple.c" />
+    <ClCompile Include="unpack_texture.c" />
+    <ClCompile Include="unpack_visibleregion.c" />
+    <ClCompile Include="unpack_writeback.c" />
+  </ItemGroup>
+</Project>

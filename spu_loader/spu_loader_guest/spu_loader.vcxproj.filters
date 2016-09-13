@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{ca61b4d0-20fc-4d75-8ff5-2817bf9f2421}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Scripts\dispatch.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\glloader.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\spuchange.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\spucopy.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\choosevisual.c" />
+    <ClCompile Include="..\spuinit.c" />
+    <ClCompile Include="..\spuload.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Scripts\spu_dispatch_table.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\loader.def" />
+  </ItemGroup>
+</Project>

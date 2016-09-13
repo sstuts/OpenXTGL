@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GeneratedFiles">
+      <UniqueIdentifier>{cff86b4e-022b-4556-a6ff-71a568d01b5a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\pack_arrays.c" />
+    <ClCompile Include="..\pack_beginend.c" />
+    <ClCompile Include="..\pack_bounds.c" />
+    <ClCompile Include="..\pack_buffer.c" />
+    <ClCompile Include="..\pack_bufferobject.c" />
+    <ClCompile Include="..\pack_client.c" />
+    <ClCompile Include="..\pack_clipplane.c" />
+    <ClCompile Include="..\pack_context.c" />
+    <ClCompile Include="..\pack_error.c" />
+    <ClCompile Include="..\pack_extensions.c" />
+    <ClCompile Include="..\pack_feedback.c" />
+    <ClCompile Include="..\pack_fence.c" />
+    <ClCompile Include="..\pack_fog.c" />
+    <ClCompile Include="..\pack_framebuffer.c" />
+    <ClCompile Include="..\pack_init.c" />
+    <ClCompile Include="..\pack_lights.c" />
+    <ClCompile Include="..\pack_lists.c" />
+    <ClCompile Include="..\pack_map.c" />
+    <ClCompile Include="..\pack_materials.c" />
+    <ClCompile Include="..\pack_matrices.c" />
+    <ClCompile Include="..\pack_misc.c" />
+    <ClCompile Include="..\pack_pixelmap.c" />
+    <ClCompile Include="..\pack_pixels.c" />
+    <ClCompile Include="..\pack_point.c" />
+    <ClCompile Include="..\pack_program.c" />
+    <ClCompile Include="..\pack_regcombiner.c" />
+    <ClCompile Include="..\pack_shaders.c" />
+    <ClCompile Include="..\pack_stipple.c" />
+    <ClCompile Include="..\pack_swap_lists.c" />
+    <ClCompile Include="..\pack_swap_map.c" />
+    <ClCompile Include="..\pack_swap_pixelmap.c" />
+    <ClCompile Include="..\pack_swap_texture.c" />
+    <ClCompile Include="..\pack_texture.c" />
+    <ClCompile Include="..\pack_visibleregion.c" />
+    <ClCompile Include="..\Scripts\pack_arrays_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_bbox.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_bounds_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_bufferobject_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_client_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_clipplane_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_current.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_fog_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_lights_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_materials_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_matrices_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_misc_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_pixels_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_point_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_program_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_regcombiner_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\pack_stipple_swap.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scripts\packer.c">
+      <Filter>GeneratedFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\pack_bbox.h" />
+    <ClInclude Include="..\packer.h" />
+    <ClInclude Include="..\packer_extensions.h" />
+    <ClInclude Include="..\Scripts\cr_opcodes.h">
+      <Filter>GeneratedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Scripts\cr_packfunctions.h">
+      <Filter>GeneratedFiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

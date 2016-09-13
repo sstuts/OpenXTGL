@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{d3d67fba-54fa-4b04-bce6-f692c1558995}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\server_dispatch.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\server_get.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\server_retval.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\server_simpleget.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server_boundsinfo.c" />
+    <ClCompile Include="server_bufferobject.c" />
+    <ClCompile Include="server_clear.c" />
+    <ClCompile Include="server_clip.c" />
+    <ClCompile Include="server_config.c" />
+    <ClCompile Include="server_context.c" />
+    <ClCompile Include="server_framebuffer.c" />
+    <ClCompile Include="server_gentextures.c" />
+    <ClCompile Include="server_getmap.c" />
+    <ClCompile Include="server_getpixelmap.c" />
+    <ClCompile Include="server_getpointer.c" />
+    <ClCompile Include="server_getshaders.c" />
+    <ClCompile Include="server_getstring.c" />
+    <ClCompile Include="server_getteximage.c" />
+    <ClCompile Include="server_glsl.c" />
+    <ClCompile Include="server_lists.c" />
+    <ClCompile Include="server_main.c" />
+    <ClCompile Include="server_misc.c" />
+    <ClCompile Include="server_muralfbo.cpp" />
+    <ClCompile Include="server_occlude.c" />
+    <ClCompile Include="server_papi.c" />
+    <ClCompile Include="server_projmatrix.c" />
+    <ClCompile Include="server_readpixels.c" />
+    <ClCompile Include="server_rpw.cpp" />
+    <ClCompile Include="server_stream.c" />
+    <ClCompile Include="server_texture.c" />
+    <ClCompile Include="server_viewport.c" />
+    <ClCompile Include="server_window.c" />
+    <ClCompile Include="server_winpos.c" />
+    <ClCompile Include="server_writeback.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\server_dispatch.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h" />
+  </ItemGroup>
+</Project>

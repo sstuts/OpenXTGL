@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{85b93504-303a-4b03-b1c7-ba922a2aba12}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scripts\feedback_state.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\feedbackspu.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="feedback_context.c" />
+    <ClCompile Include="feedbackspu_config.c" />
+    <ClCompile Include="feedbackspu_init.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scripts\feedbackspu_proto.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="feedbackspu.h" />
+  </ItemGroup>
+</Project>
