@@ -84,7 +84,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <NMakeBuildCommandLine>nmake -f Makefile all</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>nmake -f Makefile all clean</NMakeReBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake -f Makefile clean all</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>nmake -f Makefile clean</NMakeCleanCommandLine>
   </PropertyGroup>
   <ItemDefinitionGroup>

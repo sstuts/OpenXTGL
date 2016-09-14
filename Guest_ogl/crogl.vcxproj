@@ -161,6 +161,7 @@
       <Profile>false</Profile>
       <AdditionalDependencies>shell32.lib;gdi32.lib;user32.lib;%(AdditionalDependencies);mincore.lib</AdditionalDependencies>
       <ModuleDefinitionFile>Scripts\cropengl.def</ModuleDefinitionFile>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

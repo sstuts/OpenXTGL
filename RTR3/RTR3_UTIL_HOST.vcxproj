@@ -125,7 +125,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;RT_NO_GIP;_AMD64_;IN_RT_STATIC;IN_RT_R3;IN_RING3;WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;IPRT_NT_USE_WINTERNL;RT_NO_GIP;_AMD64_;IN_RT_STATIC;IN_RT_R3;IN_RING3;WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4244</DisableSpecificWarnings>
     </ClCompile>

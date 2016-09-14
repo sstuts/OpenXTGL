@@ -153,6 +153,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>IN_GUEST;IN_RT_R3;IN_R3_STATIC;IN_RING3;WINDOWS;NDEBUG;_WINDOWS;_USRDLL;SPU_LOADER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include\;$(INCLUDE_DIR);$(TOP)spu_loader\scripts;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4005;4090;4242;4748;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -182,9 +183,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\util\guest_util\guest_util.vcxproj">
       <Project>{eee24f09-4526-4ab6-a6f4-8f5ac44e4557}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\util\util_guest\utils.vcxproj">
-      <Project>{7c89f01d-1e84-4653-91e8-bb5bbc0b618b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

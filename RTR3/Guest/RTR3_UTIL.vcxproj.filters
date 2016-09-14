@@ -38,7 +38,6 @@
     <ClCompile Include="..\dbgmodcodeview.cpp" />
     <ClCompile Include="..\dbgmodcontainer.cpp" />
     <ClCompile Include="..\dbgmoddbghelp.cpp" />
-    <ClCompile Include="..\dbgmoddeferred.cpp" />
     <ClCompile Include="..\dbgmoddwarf.cpp" />
     <ClCompile Include="..\dbgmodexports.cpp" />
     <ClCompile Include="..\dbgmodldr.cpp" />

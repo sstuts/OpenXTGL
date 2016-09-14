@@ -51,6 +51,8 @@
     <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <SupportsPackaging>false</SupportsPackaging>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -148,7 +150,8 @@
       <PreprocessorDefinitions>IN_GUEST;VBOX;RT_OS_WINDOWS;CHROMIUM_THREADSAFE;IN_RT_R3;IN_RT_STATIC;IN_RING3;WINDOWS;NDEBUG;_WINDOWS;_USRDLL;GUEST_UTIL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\scripts;$(TOP)packer\ScriptsC:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4311;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>
+      </RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

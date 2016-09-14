@@ -48,7 +48,7 @@ static void LogToDebugOutputV(const char *pszFormat, va_list va)
 #if defined(_DEBUG)
     OutputDebugStringA(output);
 #else
-    crA2T(tString, sizeof(tString), output);
+    //crA2T(tString, sizeof(tString), output);
     OutputDebugString(tString);
 #endif
 }
@@ -57,8 +57,8 @@ static void LogToDebugOutput(const char *pString)
 #if defined(_DEBUG)
     OutputDebugStringA(pString);
 #else
-    TCHAR tString[4096];
-    crA2T(tString, sizeof(tString), pString);
+     TCHAR tString[4096];
+//     crA2T(tString, sizeof(tString), pString);
     OutputDebugString(tString);
 #endif
 }

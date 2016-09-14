@@ -74,7 +74,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(Platform)\$(Configuration)\guest</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\guest\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(Platform)\$(Configuration)\guest\</IntDir>
@@ -199,6 +199,11 @@
     <ClInclude Include="..\pack_bbox.h" />
     <ClInclude Include="..\Scripts\cr_opcodes.h" />
     <ClInclude Include="..\Scripts\cr_packfunctions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\spu_loader\spu_loader_guest\spu_loader.vcxproj">
+      <Project>{d38cbd69-c4b6-4b5b-bd5c-da6c0d5bda54}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

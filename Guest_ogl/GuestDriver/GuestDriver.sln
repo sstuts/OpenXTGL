@@ -48,6 +48,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGL", "OpenGL", "{15291E7E-1C0A-4251-AA0D-FE52300F6B5C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crogl_scripts", "..\Scripts\crogl_scripts.vcxproj", "{86767C40-089B-4615-841D-3E93C74EFC82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CC660F8B-6EAE-470F-919B-2C321EE032EF} = {CC660F8B-6EAE-470F-919B-2C321EE032EF}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTR3_UTIL", "..\..\RTR3\Guest\RTR3_UTIL.vcxproj", "{56AA9E2D-31D9-4E2A-AE9B-A508F830B7A3}"
 EndProject
@@ -82,6 +85,13 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "feedback_scripts", "..\..\feedback_spu\Scripts\feedback_scripts.vcxproj", "{836D6DA2-BC19-478C-8759-64A121DBC94B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRUtil", "..\..\util\guest_util\guest_util.vcxproj", "{EEE24F09-4526-4AB6-A6F4-8F5AC44E4557}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CC660F8B-6EAE-470F-919B-2C321EE032EF} = {CC660F8B-6EAE-470F-919B-2C321EE032EF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps and Benchmarks", "Apps and Benchmarks", "{3EF24863-48FD-48D9-958E-FB2F2491C037}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLMark", "..\..\GLMark\GLMark.vcxproj", "{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -252,6 +262,14 @@ Global
 		{EEE24F09-4526-4AB6-A6F4-8F5AC44E4557}.Release|x64.Build.0 = Release|x64
 		{EEE24F09-4526-4AB6-A6F4-8F5AC44E4557}.Release|x86.ActiveCfg = Release|Win32
 		{EEE24F09-4526-4AB6-A6F4-8F5AC44E4557}.Release|x86.Build.0 = Release|Win32
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Debug|x64.ActiveCfg = Debug|x64
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Debug|x64.Build.0 = Debug|x64
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Debug|x86.Build.0 = Debug|Win32
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Release|x64.ActiveCfg = Release|x64
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Release|x64.Build.0 = Release|x64
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Release|x86.ActiveCfg = Release|Win32
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -274,5 +292,6 @@ Global
 		{E3B4D0E1-9C98-4FD4-9E25-7781FC84BADD} = {07630A3F-4F79-4286-A295-48DBB4AEE99C}
 		{1C265573-552A-4AAC-9BF7-FBA60C843B7E} = {C23185D1-446A-4813-B83D-76827DBD4A38}
 		{836D6DA2-BC19-478C-8759-64A121DBC94B} = {6132498C-631B-49B6-8F30-A1A0ED52327F}
+		{F6F295BD-754A-4B34-A468-BB66E0BEEFF5} = {3EF24863-48FD-48D9-958E-FB2F2491C037}
 	EndGlobalSection
 EndGlobal
