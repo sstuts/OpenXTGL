@@ -138,7 +138,8 @@ static void crServerCleanupClient(CRClient *client)
             cr_server.dispatch.DestroyContext(client->contextList[pos]);
         }
     }
-    crCloseSocket(cr_server.curClient->conn->tcp_socket);
+    if (cr_server.curClient && cr_server.curClient->conn)
+        crCloseSocket(cr_server.curClient->conn->tcp_socket);
     cr_server.curClient = oldclient;
 }
 
@@ -878,6 +879,7 @@ crServerServiceClients(void)
             /* advance to next client */
             cr_server.run_queue = cr_server.run_queue->next;
         }
+        if(stat == CLIENT_GONE) return;
     q = getNextClient(GL_TRUE);
     }
 }

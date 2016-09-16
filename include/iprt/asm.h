@@ -33,7 +33,9 @@
  * Defined as 1 if we're using a _MSC_VER 1400.
  * Otherwise defined as 0.
  */
-
+#ifdef WINDOWS
+#include <windows.h>
+#endif
 /* Solaris 10 header ugliness */
 #ifdef u
 # undef u
@@ -237,6 +239,8 @@ DECLINLINE(void) ASMNopPause(void)
  * @param   pu8    Pointer to the 8-bit variable to update.
  * @param   u8     The 8-bit value to assign to *pu8.
  */
+#define ASMAtomicXchgU8(pu8, u8) _InterlockedExchange8( (char volatile *)pu8, (char) u8);
+#if 0
 #if RT_INLINE_ASM_EXTERNAL
 DECLASM(uint8_t) ASMAtomicXchgU8(volatile uint8_t *pu8, uint8_t u8);
 #else
@@ -267,7 +271,7 @@ DECLINLINE(uint8_t) ASMAtomicXchgU8(volatile uint8_t *pu8, uint8_t u8)
     return u8;
 }
 #endif
-
+#endif
 
 /**
  * Atomically Exchange a signed 8-bit value, ordered.
@@ -3848,6 +3852,8 @@ DECLINLINE(void) ASMBitClear(volatile void *pvBitmap, int32_t iBit)
  * @param   iBit        The bit to toggle set.
  * @remarks No memory barrier, take care on smp.
  */
+#define ASMAtomicBitClear(pvBitmap, iBit) InterlockedBitTestAndReset((volatile LONG *)pvBitmap, (LONG)iBit);
+#if 0
 #if RT_INLINE_ASM_EXTERNAL
 DECLASM(void) ASMAtomicBitClear(volatile void *pvBitmap, int32_t iBit);
 #else
@@ -3876,7 +3882,7 @@ DECLINLINE(void) ASMAtomicBitClear(volatile void *pvBitmap, int32_t iBit)
 # endif
 }
 #endif
-
+#endif
 
 /**
  * Toggles a bit in a bitmap.
@@ -4278,9 +4284,13 @@ DECLASM(bool) ASMBitTest(const volatile void *pvBitmap, int32_t iBit);
 #else
 DECLINLINE(bool) ASMBitTest(const volatile void *pvBitmap, int32_t iBit)
 {
-    union { bool f; uint32_t u32; uint8_t u8; } rc;
+    union { bool f; LONG64 u64;  uint32_t u32; uint8_t u8; } rc;
 # if RT_INLINE_ASM_USES_INTRIN
+#ifdef _X86_
     rc.u32 = _bittest((long *)pvBitmap, iBit);
+#else
+    rc.u64 = _bittest64((LONG64 *)pvBitmap, iBit);
+#endif
 # elif RT_INLINE_ASM_GNU_STYLE
 
     __asm__ __volatile__("btl %2, %1\n\t"
@@ -4556,8 +4566,11 @@ DECLINLINE(int) ASMBitNextClear(const volatile void *pvBitmap, uint32_t cBits, u
  * @param   pvBitmap    Pointer to the bitmap.
  * @param   cBits       The number of bits in the bitmap. Multiple of 32.
  */
-#if RT_INLINE_ASM_EXTERNAL
+#if RT_INLINE_ASM_EXTERNAL && !RT_INLINE_ASM_USES_INTRIN
 DECLASM(int) ASMBitFirstSet(const volatile void *pvBitmap, uint32_t cBits);
+#else
+#if RT_INLINE_ASM_USES_INTRIN
+#define ASMBitFirstSet(pvBitMap, cBits) _BitScanForward((DWORD *)pvBitMap, cBits)
 #else
 DECLINLINE(int) ASMBitFirstSet(const volatile void *pvBitmap, uint32_t cBits)
 {
@@ -4629,7 +4642,7 @@ DECLINLINE(int) ASMBitFirstSet(const volatile void *pvBitmap, uint32_t cBits)
     return -1;
 }
 #endif
-
+#endif
 
 /**
  * Finds the next set bit in a bitmap.

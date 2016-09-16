@@ -45,5 +45,48 @@
     <ClCompile Include="Scripts\state_viewport_gen.c">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="dump.cpp" />
+    <ClCompile Include="state_attrib.c" />
+    <ClCompile Include="state_buffer.c" />
+    <ClCompile Include="state_bufferobject.c" />
+    <ClCompile Include="state_client.c" />
+    <ClCompile Include="state_current.c" />
+    <ClCompile Include="state_diff.c" />
+    <ClCompile Include="state_enable.c" />
+    <ClCompile Include="state_error.c" />
+    <ClCompile Include="state_evaluators.c" />
+    <ClCompile Include="state_feedback.c" />
+    <ClCompile Include="state_fence.c" />
+    <ClCompile Include="state_flush.c" />
+    <ClCompile Include="state_fog.c" />
+    <ClCompile Include="state_framebuffer.c" />
+    <ClCompile Include="state_getstring.c" />
+    <ClCompile Include="state_glsl.c" />
+    <ClCompile Include="state_hint.c" />
+    <ClCompile Include="state_init.c" />
+    <ClCompile Include="state_lighting.c" />
+    <ClCompile Include="state_limits.c" />
+    <ClCompile Include="state_line.c" />
+    <ClCompile Include="state_lists.c" />
+    <ClCompile Include="state_multisample.c" />
+    <ClCompile Include="state_occlude.c" />
+    <ClCompile Include="state_pixel.c" />
+    <ClCompile Include="state_point.c" />
+    <ClCompile Include="state_polygon.c" />
+    <ClCompile Include="state_program.c" />
+    <ClCompile Include="state_rasterpos.c" />
+    <ClCompile Include="state_regcombiner.c" />
+    <ClCompile Include="state_snapshot.c" />
+    <ClCompile Include="state_stencil.c" />
+    <ClCompile Include="state_texdiff.c" />
+    <ClCompile Include="state_teximage.c" />
+    <ClCompile Include="state_texture.c" />
+    <ClCompile Include="state_transform.c" />
+    <ClCompile Include="state_viewport.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="state.h" />
+    <ClInclude Include="state_bits_globalop.h" />
+    <ClInclude Include="state_internals.h" />
   </ItemGroup>
 </Project>

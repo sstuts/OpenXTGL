@@ -88,10 +88,10 @@
     <NMakePreprocessorDefinitions>SOURCEDIR=..\</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <NMakeBuildCommandLine>nmake -f Makefile all</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>nmake  -f Makefile all</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>nmake -f Makefile clean all</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>nmake -f Makefile clean</NMakeCleanCommandLine>
-    <NMakePreprocessorDefinitions>SOURCEDIR=..\</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions>SOURCEDIR=..</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>

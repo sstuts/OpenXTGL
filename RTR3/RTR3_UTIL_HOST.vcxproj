@@ -193,7 +193,10 @@
     <ClCompile Include="dbgas.cpp" />
     <ClCompile Include="dbgcfg.cpp" />
     <ClCompile Include="dbgmod.cpp" />
-    <ClCompile Include="dbgmodcodeview.cpp" />
+    <ClCompile Include="dbgmodcodeview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="dbgmodcontainer.cpp" />
     <ClCompile Include="dbgmoddbghelp.cpp" />
     <ClCompile Include="dbgmoddeferred.cpp" />
@@ -225,7 +228,10 @@
     <ClCompile Include="ldrMemory.cpp" />
     <ClCompile Include="ldrNative-win.cpp" />
     <ClCompile Include="ldrNative.cpp" />
-    <ClCompile Include="ldrPE.cpp" />
+    <ClCompile Include="ldrPE.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="lockvalidator.cpp" />
     <ClCompile Include="log-vbox.cpp" />
     <ClCompile Include="log.cpp" />
