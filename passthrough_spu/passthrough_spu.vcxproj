@@ -94,10 +94,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>IN_GUEST;IN_RT_R3;IN_RT_STATIC;_DEBUG;_WINDOWS;WIN32;_DEBUG;_WINDOWS;_USRDLL;PASSTHROUGH_SPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\Scripts;.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <ModuleDefinitionFile>passthrough-x86.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,7 +129,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;PASSTHROUGH_SPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IN_GUEST;IN_RT_R3;IN_RT_STATIC;NDEBUG;_WINDOWS;_USRDLL;PASSTHROUGH_SPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\Scripts;.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

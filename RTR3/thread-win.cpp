@@ -184,7 +184,7 @@ static void rtThreadNativeUninitComAndOle(void)
         void *pvTeb = NtCurrentTeb();
 # ifdef RT_ARCH_AMD64
         pOleTlsData = *(struct MySOleTlsData **)((uintptr_t)pvTeb + 0x1758); /*TEB.ReservedForOle*/
-# elif RT_ARCH_X86
+# elif defined RT_ARCH_X86
         pOleTlsData = *(struct MySOleTlsData **)((uintptr_t)pvTeb + 0x0f80); /*TEB.ReservedForOle*/
 # else
 #  error "Port me!"

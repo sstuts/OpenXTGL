@@ -731,7 +731,7 @@ GetWindowTitle( const WindowInfo *window, char *title )
 {
     /* XXX - we don't handle recurseUp */
     if (window->hWnd)
-        GetWindowText(window->hWnd, title, 100);
+        GetWindowTextA(window->hWnd, title, 100);
     else
         title[0] = 0;
 }

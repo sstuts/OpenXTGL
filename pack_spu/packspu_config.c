@@ -11,6 +11,7 @@
 #include "cr_mem.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 static void __setDefaults( void )
 {

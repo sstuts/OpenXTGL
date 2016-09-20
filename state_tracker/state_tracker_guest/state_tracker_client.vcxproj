@@ -87,6 +87,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>IN_GUEST;IN_RING3;WINDOWS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)state_tracker\Scripts;$(TOP)spu_loader\Scripts;$(TOP)state_tracker;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+      <CallingConvention>StdCall</CallingConvention>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -114,7 +116,10 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IN_GUEST;IN_RING3;WINDOWS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include\;$(INCLUDE_DIR);$(TOP)state_tracker\Scripts;$(TOP)spu_loader\Scripts;$(TOP)state_tracker</AdditionalIncludeDirectories>
+      <RuntimeLibrary>
+      </RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -132,6 +137,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>IN_GUEST;IN_RING3;WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)state_tracker\Scripts;$(TOP)spu_loader\Scripts;$(TOP)state_tracker</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -198,11 +204,6 @@
     <ClInclude Include="..\state.h" />
     <ClInclude Include="..\state_bits_globalop.h" />
     <ClInclude Include="..\state_internals.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\util\guest_util\guest_util.vcxproj">
-      <Project>{eee24f09-4526-4ab6-a6f4-8f5ac44e4557}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

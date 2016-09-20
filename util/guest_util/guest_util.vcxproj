@@ -96,6 +96,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>IN_GUEST;VBOX;RT_OS_WINDOWS;CHROMIUM_THREADSAFE;IN_RT_R3;IN_RT_STATIC;IN_RING3;WINDOWS;WIN32;_DEBUG;_WINDOWS;_USRDLL;GUEST_UTIL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\scripts;$(TOP)packer\ScriptsC:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,7 +131,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>IN_GUEST;VBOX;RT_OS_WINDOWS;CHROMIUM_THREADSAFE;IN_RT_R3;IN_RT_STATIC;IN_RING3;WINDOWS;WIN32;NDEBUG;_WINDOWS;_USRDLL;GUEST_UTIL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\scripts;$(TOP)packer\ScriptsC:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\scripts;$(TOP)packer\ScriptsC:\OpenSSL-Win32\include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

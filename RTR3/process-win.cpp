@@ -1253,7 +1253,7 @@ RTR3DECL(int)   RTProcCreateEx(const char *pszExec, const char * const *papszArg
      * Create the environment block, command line and convert the executable
      * name.
      */
-    PRTUTF16 pwszzBlock;
+    PRTUTF16 pwszzBlock(NULL);
     if (RT_SUCCESS(rc))
         rc = RTEnvQueryUtf16Block(hEnv, &pwszzBlock);
     if (RT_SUCCESS(rc))

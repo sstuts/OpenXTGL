@@ -1085,7 +1085,7 @@ crStateGLSLProgramCacheUniforms(GLuint program, GLsizei maxcbData, GLsizei *cbDa
 
                 for (j=firstIndex; j<size; ++j)
                 {
-                    sprintf_s(pIndexStr, strlen(pIndexStr),"[%i]", j);
+                    sprintf_s(pIndexStr, strlen(pIndexStr) + 1,"[%d]", j);
                     cbName = crStrlen(name);
 
                     location = diff_api.GetUniformLocation(pProgram->hwid, name);

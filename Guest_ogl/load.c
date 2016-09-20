@@ -482,7 +482,11 @@ static void stubSPUSafeTearDown(void)
 }
 
 
+#ifdef _X86_
+static __cdecl  stubExitHandler(void )
+#else
 static void stubExitHandler(void)
+#endif
 {
     stubSPUSafeTearDown();
     signal(SIGTERM, SIG_DFL);
@@ -492,7 +496,11 @@ static void stubExitHandler(void)
 /**
  * Called when we receive a SIGTERM signal.
  */
+#ifdef _X86_
+static __cdecl stubSignalHandler(int signo)
+#else
 static void stubSignalHandler(int signo)
+#endif
 {
     stubSPUSafeTearDown();
     exit(0);  /* this causes stubExitHandler() to be called */
@@ -655,7 +663,7 @@ LookupMothershipConfig(const char *procName)
     FILE *f;
     const char *home;
     char configPath[1000];
-    errno_t errno;
+    errno_t err;
 
     /* first, check if the CR_CONFIG env var is set */
     {
@@ -677,8 +685,8 @@ LookupMothershipConfig(const char *procName)
             crStrcpy(configPath, conf); /* from env var */
     }
 
-    errno = fopen_s(&f, configPath, "r");
-    if (errno) {
+    err = fopen_s(&f, configPath, "r");
+    if (err) {
         return NULL;
     }
 
@@ -1323,12 +1331,12 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
     static int checkEnv = 1;
     static int hang = 0;
     const char *HangApp; 
-
     if(checkEnv){
         HangApp = crGetenv("OXT_HANG");
         if(HangApp) hang = 1;
         checkEnv = 0;
     }
+
     while(hang) {
         if (!crGetenv("OXT_HANG"))
             hang++;
@@ -1519,6 +1527,7 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
         {
             CRASSERT(stub.spu);
             stub.spu->dispatch_table.VBoxDetachThread();
+            stub_initialized = false;
         }
         break;
     }

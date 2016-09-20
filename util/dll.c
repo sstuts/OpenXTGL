@@ -8,6 +8,7 @@
 #include "cr_error.h"
 #include "cr_dll.h"
 #include "cr_string.h"
+#include "cr_environment.h"
 #include "stdio.h"
 
 #ifndef IN_GUEST
@@ -162,13 +163,14 @@ int get_dll_type( const char *name ) {
  * the state tracker duplicated in the array, tilesort, etc. SPUs).
  */
 #if 1
+
 void loadDLL(CRDLL * dll, const char *dllname, WCHAR * szwPath, UINT cwcPath)
 {
     dll->hinstLib = NULL;
-    if(!MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, dllname, -1, &szwPath[0], MAX_PATH - cwcPath))
+    if(!MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, dllname, -1, &szwPath[cwcPath], MAX_PATH - cwcPath))
     {
         DWORD winEr = GetLastError();
-        crError("MultiByteToWideChar failed err %d", winEr);
+        crWarning("MultiByteToWideChar failed err %d", winEr);
         SetLastError(winEr);
         return;
     }
@@ -177,10 +179,28 @@ void loadDLL(CRDLL * dll, const char *dllname, WCHAR * szwPath, UINT cwcPath)
     dll->hinstLib = LoadLibraryW(szwPath);
     if(!dll->hinstLib)
     {
-        crError("failed to load dll %s", dllname);
+        crWarning("failed to load dll %s", dllname);
     }
 }
+void loadSpecialDll(CRDLL * dll, const char * dllname)
+{
+    WCHAR szwPath[MAX_PATH];
+    UINT cwc = 0;
+    const char * specialPath = crGetenv("CR_DLL_PATH");
+    dll->hinstLib = NULL;
+    if(!specialPath) return;
 
+    //Add special path to wchar buffer
+    if(!MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, specialPath, -1, &szwPath[0], MAX_PATH))
+    {
+        DWORD winEr = GetLastError();
+        crWarning("MultiByteToWideChar failed err %d", winEr);
+        SetLastError(winEr);
+        return;
+    }
+    cwc = wcslen(szwPath);
+    loadDLL(dll, dllname, &szwPath[0], cwc );
+}
 //AIS version that just does what we want.
 CRDLL * crDLLOpen(const char * dllname, int resolveGlobal)
 {
@@ -199,19 +219,29 @@ CRDLL * crDLLOpen(const char * dllname, int resolveGlobal)
         loadDLL(dll, dllname, &szwPath[0], 0);
         if(dll->hinstLib)
             return dll;
+
+        //Try a special path
+        loadSpecialDll(dll, dllname);
+        if(dll->hinstLib)
+            return dll;
+
+        //Go for the system path
+        cName = strlen(dllname) + 1;
+        cwcPath = GetSystemDirectoryW(szwPath, RT_ELEMENTS(szwPath));
+        if(!cwcPath || cwcPath >= MAX_PATH)
+        {
+            DWORD winEr = GetLastError();
+            crError("GetSystemDirectoryW failed err %d", winEr);
+            SetLastError(winEr);
+            return NULL;
+        }
     }
-    
-    //Go for the system path
-    cName = strlen(dllname) + 1;
-    cwcPath = GetSystemDirectoryW(szwPath, RT_ELEMENTS(szwPath));
-    if(!cwcPath || cwcPath >= MAX_PATH)
+    else
     {
-        DWORD winEr = GetLastError();
-        crError("GetSystemDirectoryW failed err %d", winEr);
-        SetLastError(winEr);
-        return NULL;
+        cwcPath = 0;
     }
-    loadDLL(dll, dllname, &szwPath[cwcPath], cwcPath);
+
+    loadDLL(dll, dllname, &szwPath[0], cwcPath);
     return dll;
 }
 #else

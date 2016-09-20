@@ -73,9 +73,9 @@
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <NMakeBuildCommandLine>all</NMakeBuildCommandLine>
-    <NMakeCleanCommandLine>clean</NMakeCleanCommandLine>
-    <NMakeReBuildCommandLine>all clean</NMakeReBuildCommandLine>
+    <NMakeBuildCommandLine>nmake -f Makefile all</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>nmake -f Makefile clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>nmake -f Makefile all clean</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

@@ -183,7 +183,7 @@ VBOXBLITTERDECL(int)  CrBltCleanup(PCR_BLITTER pBlitter);
 
 DECLINLINE(GLboolean) CrBltSupportsTexTex(PCR_BLITTER pBlitter)
 {
-    return pBlitter->Flags.SupportsFBO;
+    return (GLboolean) pBlitter->Flags.SupportsFBO;
 }
 
 DECLINLINE(GLboolean) CrBltIsEntered(PCR_BLITTER pBlitter)
@@ -304,7 +304,7 @@ DECLINLINE(int) CrTdBltEnter(PCR_TEXDATA pTex)
 
 DECLINLINE(bool) CrTdBltIsEntered(PCR_TEXDATA pTex)
 {
-    return pTex->Flags.Entered;
+    return (bool) pTex->Flags.Entered;
 }
 
 DECLINLINE(void) CrTdBltLeave(PCR_TEXDATA pTex)
