@@ -1490,6 +1490,7 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
     {
         /* do exactly the same thing as for DLL_THREAD_DETACH since
          * DLL_THREAD_DETACH is not called for the thread doing DLL_PROCESS_DETACH according to msdn docs */
+        STUB_INIT_LOCK();
         stubSetCurrentContext(NULL);
         if (stub_initialized)
         {
@@ -1502,7 +1503,7 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
 #ifdef CHROMIUM_THREADSAFE
         crFreeTSD(&g_stubCurrentContextTSD);
 #endif
-
+        STUB_INIT_UNLOCK();
 #ifdef VDBG_VEHANDLER
         if (g_VBoxVehEnable)
             vboxVDbgVEHandlerUnregister();
@@ -1512,16 +1513,19 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
 
     case DLL_THREAD_ATTACH:
     {
+        STUB_INIT_LOCK();
         if (stub_initialized)
         {
             CRASSERT(stub.spu);
             stub.spu->dispatch_table.VBoxAttachThread();
         }
+        STUB_INIT_UNLOCK();
         break;
     }
 
     case DLL_THREAD_DETACH:
     {
+        STUB_INIT_LOCK();
         stubSetCurrentContext(NULL);
         if (stub_initialized)
         {
@@ -1529,6 +1533,7 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
             stub.spu->dispatch_table.VBoxDetachThread();
             stub_initialized = false;
         }
+        STUB_INIT_UNLOCK();
         break;
     }
 
