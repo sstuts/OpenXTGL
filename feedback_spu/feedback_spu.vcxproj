@@ -162,6 +162,7 @@
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\Scripts;.\;.\Scripts;$(TOP)packer\Scripts;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4242;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -169,6 +170,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <ModuleDefinitionFile>feedback-x86.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

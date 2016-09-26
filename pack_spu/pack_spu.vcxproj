@@ -131,8 +131,8 @@
       <PreprocessorDefinitions>IN_RT_R3;IN_RT_STATIC;IN_GUEST;NDEBUG;_WINDOWSWIN32;NDEBUG;_WINDOWS;_USRDLL;PACK_SPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\Scripts;.\;.\Scripts;$(TOP)packer\Scripts;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
-      <RuntimeLibrary>
-      </RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,7 +141,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>rtr3_util.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)%(AdditionalDependencies);mincore.lib</AdditionalDependencies>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
-      <ModuleDefinitionFile>pack.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>pack-x86.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

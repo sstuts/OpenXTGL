@@ -41,5 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pack.def" />
+    <None Include="pack-x86.def" />
   </ItemGroup>
 </Project>

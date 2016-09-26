@@ -144,6 +144,7 @@
       <PreprocessorDefinitions>IN_RT_R3;IN_RT_STATIC;WIN32;NDEBUG;_WINDOWS;_USRDLL;CROGL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>.\;.\scripts;$(TOP)spu_loader\scripts;$(INCLUDE_DIR);C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(KIT_SHARED_IncludePath)\warning.h</ForcedIncludeFiles>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

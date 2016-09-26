@@ -120,6 +120,7 @@
       <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include\;$(INCLUDE_DIR);$(TOP)state_tracker\Scripts;$(TOP)spu_loader\Scripts;$(TOP)state_tracker</AdditionalIncludeDirectories>
       <RuntimeLibrary>
       </RuntimeLibrary>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -138,7 +138,10 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SPU_LOADER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IN_GUEST;IN_RT_R3;IN_R3_STATIC;IN_RING3;WINDOWS;WIN32;NDEBUG;_WINDOWS;_USRDLL;SPU_LOADER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include\;$(INCLUDE_DIR);$(TOP)spu_loader\scripts;</AdditionalIncludeDirectories>
+      <CallingConvention>StdCall</CallingConvention>
+      <ForcedIncludeFiles>$(KIT_SHARED_IncludePath)\warning.h; $(INCLUDE_DIR)iprt\win-mangler.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

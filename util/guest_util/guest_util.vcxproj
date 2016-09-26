@@ -132,6 +132,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>IN_GUEST;VBOX;RT_OS_WINDOWS;CHROMIUM_THREADSAFE;IN_RT_R3;IN_RT_STATIC;IN_RING3;WINDOWS;WIN32;NDEBUG;_WINDOWS;_USRDLL;GUEST_UTIL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\scripts;$(TOP)packer\ScriptsC:\OpenSSL-Win32\include\;</AdditionalIncludeDirectories>
+      <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
