@@ -120,7 +120,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>IN_GUEST;_DEBUG;_WINDOWS;WIN32;_DEBUG;_WINDOWS;_USRDLL;FEEDBACK_SPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IN_GUEST;_WINDOWS;WIN32;_DEBUG;_WINDOWS;_USRDLL;FEEDBACK_SPU_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(TOP)spu_loader\Scripts;.\;.\Scripts;$(TOP)packer\Scripts;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4242;</DisableSpecificWarnings>
       <CallingConvention>StdCall</CallingConvention>

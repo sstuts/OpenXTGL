@@ -39,13 +39,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -74,7 +74,12 @@
     <Import Project="..\gxlogl.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -93,12 +98,15 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;IPRT_NT_USE_WINTERNL;RT_NO_GIP;_AMD64_;IN_RT_STATIC;IN_RT_R3;IN_RING3;WINDOWS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;IPRT_NT_USE_WINTERNL;RT_NO_GIP;_AMD64_;IN_RT_R3;IN_RING3;WINDOWS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>c:\openssl-win64\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,7 +133,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;IPRT_NT_USE_WINTERNL;RT_NO_GIP;_AMD64_;IN_RT_STATIC;IN_RT_R3;IN_RING3;WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OXTOGL;OXT_OPENGL;IPRT_NT_USE_WINTERNL;RT_NO_GIP;_AMD64_;IN_RT_R3;IN_RING3;WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(INCLUDE_DIR);.\;C:\OpenSSL-Win64\include\;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4244</DisableSpecificWarnings>
     </ClCompile>
@@ -133,6 +141,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>c:\openssl-win64\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -191,7 +201,10 @@
     <ClCompile Include="critsectrw-generic.cpp" />
     <ClCompile Include="dbg.cpp" />
     <ClCompile Include="dbgas.cpp" />
-    <ClCompile Include="dbgcfg.cpp" />
+    <ClCompile Include="dbgcfg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="dbgmod.cpp" />
     <ClCompile Include="dbgmodcodeview.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -199,7 +212,10 @@
     </ClCompile>
     <ClCompile Include="dbgmodcontainer.cpp" />
     <ClCompile Include="dbgmoddbghelp.cpp" />
-    <ClCompile Include="dbgmoddeferred.cpp" />
+    <ClCompile Include="dbgmoddeferred.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="dbgmoddwarf.cpp" />
     <ClCompile Include="dbgmodexports.cpp" />
     <ClCompile Include="dbgmodldr.cpp" />
@@ -239,14 +255,20 @@
     <ClCompile Include="logformat.cpp" />
     <ClCompile Include="logrel.cpp" />
     <ClCompile Include="logrelellipsis.cpp" />
-    <ClCompile Include="md5str.cpp" />
+    <ClCompile Include="md5str.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="memcache.cpp" />
     <ClCompile Include="once.cpp" />
     <ClCompile Include="openssl-sha1.cpp" />
     <ClCompile Include="path-win.cpp" />
     <ClCompile Include="path.cpp" />
     <None Include="pathint-nt.cpp" />
-    <ClCompile Include="process-win.cpp" />
+    <ClCompile Include="process-win.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="process.cpp" />
     <ClCompile Include="rand.cpp" />
     <ClCompile Include="randadv.cpp" />

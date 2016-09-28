@@ -152,6 +152,11 @@
   <ItemGroup>
     <ClCompile Include="HostApp.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RTR3\RTR3_UTIL_HOST.vcxproj">
+      <Project>{fccc9643-489b-461f-8ff8-ad5b163db55b}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

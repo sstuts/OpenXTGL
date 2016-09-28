@@ -35,7 +35,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "error", "error", "{A11AC1AE
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "error_scripts", "..\error_spu\Scripts\scripts_makefile.vcxproj", "{8777DA71-9889-4B55-894C-A6C5FA0998A2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AIShosterrorspu", "..\error_spu\error_spu_host.vcxproj", "{D96C7893-CA33-4ACB-9D73-338268A7424B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OXThosterrorspu", "..\error_spu\error_spu_host.vcxproj", "{D96C7893-CA33-4ACB-9D73-338268A7424B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8777DA71-9889-4B55-894C-A6C5FA0998A2} = {8777DA71-9889-4B55-894C-A6C5FA0998A2}
 		{CC660F8B-6EAE-470F-919B-2C321EE032EF} = {CC660F8B-6EAE-470F-919B-2C321EE032EF}
@@ -65,7 +65,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unpacker_host", "..\unpacke
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "render", "render", "{A8153899-AF06-41E5-BBD3-52C7EEFE4F7B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AISrenderspu", "..\render_spu\render_host.vcxproj", "{4ECBE85D-E3AB-497D-A019-8FB5A6E5F90F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OXTrenderspu", "..\render_spu\render_host.vcxproj", "{4ECBE85D-E3AB-497D-A019-8FB5A6E5F90F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F90FD8E2-6BF3-40DE-938D-EFF54D71F236} = {F90FD8E2-6BF3-40DE-938D-EFF54D71F236}
 	EndProjectSection
@@ -78,6 +78,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HostApp", "..\HostApp\HostA
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serverLib_scripts", "..\serverLib\Scripts\serverLib_scripts.vcxproj", "{9B9FFE3A-3597-447B-A68A-B1FA8C18DCF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dlm", "dlm", "{DC607EE4-8BEB-4FC9-AA22-A1E76949CC08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

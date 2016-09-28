@@ -88,11 +88,6 @@
     <None Include="..\feedback.def" />
     <None Include="Makefile" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\util\guest_util\guest_util.vcxproj">
-      <Project>{eee24f09-4526-4ab6-a6f4-8f5ac44e4557}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
