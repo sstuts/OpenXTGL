@@ -370,6 +370,8 @@ static void stubSPUTearDown(void)
     if (stub_initialized)
     {
         stubSPUTearDownLocked();
+        crWarning("%s resetting initialized flag", __FUNCTION__);
+
         stub_initialized = 0;
     }
     STUB_INIT_UNLOCK();
@@ -382,6 +384,7 @@ static void stubSPUSafeTearDown(void)
 #endif
 
     if (!stub_initialized) return;
+    crWarning("%s resetting initialized flag" , __FUNCTION__);
     stub_initialized = 0;
 
 #ifdef CHROMIUM_THREADSAFE
@@ -1331,6 +1334,7 @@ BOOL WINAPI DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)
     static int checkEnv = 1;
     static int hang = 0;
     const char *HangApp; 
+
     if(checkEnv){
         HangApp = crGetenv("OXT_HANG");
         if(HangApp) hang = 1;

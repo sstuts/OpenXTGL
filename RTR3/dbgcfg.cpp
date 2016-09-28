@@ -301,14 +301,8 @@ static void rtDbgCfgLog2(PRTDBGCFGINT pThis, const char *pszFormat, ...)
 static int rtDbgCfgIsFsCaseInsensitive(const char *pszPath)
 {
     RTFSPROPERTIES Props;
-    int rc = RTFsQueryProperties(pszPath, &Props);
-    if (RT_FAILURE(rc))
-        return RT_OPSYS == RT_OPSYS_DARWIN
-            || RT_OPSYS == RT_OPSYS_DOS
-            || RT_OPSYS == RT_OPSYS_OS2
-            || RT_OPSYS == RT_OPSYS_NT
-            || RT_OPSYS == RT_OPSYS_WINDOWS;
-    return !Props.fCaseSensitive;
+    return true;
+
 }
 
 

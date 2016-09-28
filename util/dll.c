@@ -176,7 +176,7 @@ void loadDLL(CRDLL * dll, const char *dllname, WCHAR * szwPath, UINT cwcPath)
     }
     
     dll->name = crStrdup(dllname);
-    dll->hinstLib = LoadLibraryW(szwPath);
+    dll->hinstLib = LoadLibraryEx(szwPath, NULL, 0);
     if(!dll->hinstLib)
     {
         crWarning("failed to load dll %s", dllname);
@@ -216,12 +216,12 @@ CRDLL * crDLLOpen(const char * dllname, int resolveGlobal)
     //Local for dll in relative path
     if(PathIsRelativeA(dllname))
     {
-        loadDLL(dll, dllname, &szwPath[0], 0);
+        //Try a special path first
+        loadSpecialDll(dll, dllname);
         if(dll->hinstLib)
             return dll;
 
-        //Try a special path
-        loadSpecialDll(dll, dllname);
+        loadDLL(dll, dllname, &szwPath[0], 0);
         if(dll->hinstLib)
             return dll;
 

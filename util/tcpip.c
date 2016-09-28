@@ -1196,7 +1196,44 @@ crTCPIPInit( CRNetReceiveFuncList *rfl, CRNetCloseFuncList *cfl,
     cr_tcpip.bufpool = crBufferPoolInit(16);
 }
 
+static int crGetHostAddr(const char *hostname, const char * port, struct sockaddr_in * sock_addr)
+{
+    DWORD dwRetval;
+    int i = 1;
+    struct addrinfo *result = NULL;
+    struct addrinfo * ptr = NULL;
+    struct addrinfo hints;
 
+    struct sockaddr_in * sockaddr_ipv4;
+
+    char ipstringbuffer[46];
+    DWORD ipbufferlength = 46;
+
+    ZeroMemory(&hints, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+
+    dwRetval = getaddrinfo(hostname, port, &hints, &result);
+    if(dwRetval != 0)
+    {
+        crWarning("getaddrinfo failed with %d", dwRetval);
+        return dwRetval;
+    }
+
+    //Get the bloody address.
+    for(ptr = result; ptr != NULL; ptr = ptr->ai_next)
+    {
+        switch(ptr->ai_family)
+        {
+        case AF_INET:
+            sockaddr_ipv4 = (struct sockaddr_in *)ptr->ai_addr;
+            crMemcpy((char *)&(sock_addr->sin_addr), &(sockaddr_ipv4->sin_addr), sizeof(sock_addr->sin_addr));
+            return 0;
+        }
+    }
+    return 1;
+}
 /**
  * The function that actually connects.  This should only be called by clients 
  * Servers have another way to set up the socket.
@@ -1228,19 +1265,18 @@ crTCPIPDoConnect( CRConnection *conn )
     spankSocket( conn->tcp_socket );
 
     /* Standard Berkeley sockets mumbo jumbo */
-    hp = gethostbyname( conn->hostname );
-    if ( !hp )
-    {
-        crWarning( "Unknown host: \"%s\"", conn->hostname );
-        cr_tcpip.conns[conn->index] = NULL; /* remove from table */
-        return 0;
-    }
-
     crMemset( &servaddr, 0, sizeof(servaddr) );
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons( (short) conn->port );
 
-    crMemcpy((char *) &servaddr.sin_addr, hp->h_addr, sizeof(servaddr.sin_addr));
+    i = crGetHostAddr(conn->hostname, "7000", &servaddr);
+    if(i)
+    {
+        crWarning("Unknown host: \"%s\"", conn->hostname);
+        cr_tcpip.conns[conn->index] = NULL; /* remove from table */
+        return 0;
+    }
+
 #else
     char port_s[NI_MAXSERV];
     struct addrinfo *res,*cur;

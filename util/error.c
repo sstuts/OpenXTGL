@@ -79,12 +79,6 @@ static void logMessageV(const char *pszPrefix, const char *pszFormat, va_list va
 #endif
         va_end(vaCopy);
     }
-
-#ifdef IN_GUEST  /** @todo Could be subject to pre-iprt-init issues, but hopefully not... */
-    va_copy(vaCopy, va);
-    RTStrmPrintf(g_pStdErr, "%s%N\n", pszPrefix, pszFormat, &vaCopy);
-    va_end(vaCopy);
-#endif
 }
 
 static void logMessage(const char *pszPrefix, const char *pszFormat, ...)
