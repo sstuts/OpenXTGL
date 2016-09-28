@@ -168,9 +168,6 @@
     <ProjectReference Include="..\spu_loader\spu_loader_host.vcxproj">
       <Project>{f90fd8e2-6bf3-40de-938d-eff54d71f236}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\util\util_host.vcxproj">
-      <Project>{3c7623b1-f758-4a44-a957-587cd71087a1}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

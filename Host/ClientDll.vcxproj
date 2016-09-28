@@ -170,6 +170,9 @@
     <ProjectReference Include="..\render_spu\render_host.vcxproj">
       <Project>{4ecbe85d-e3ab-497d-a019-8fb5a6e5f90f}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\RTR3\RTR3_UTIL_HOST.vcxproj">
+      <Project>{fccc9643-489b-461f-8ff8-ad5b163db55b}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\serverLib\serverLib.vcxproj">
       <Project>{33bd8557-193e-45f8-af67-bcbc9d4c72ff}</Project>
     </ProjectReference>
@@ -181,9 +184,6 @@
     </ProjectReference>
     <ProjectReference Include="..\unpacker\unpacker_host.vcxproj">
       <Project>{3d67e3df-0739-4210-81eb-9072ed1604c7}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\util\util_host.vcxproj">
-      <Project>{3c7623b1-f758-4a44-a957-587cd71087a1}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
