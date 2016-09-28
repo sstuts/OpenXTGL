@@ -2,9 +2,10 @@
 
 #include <windows.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include <tchar.h>
-
+#include "atlstr.h"
 #include <gl/gl.h>
 
 // Global variables
@@ -120,10 +121,12 @@ int WINAPI WinMain(HINSTANCE hInstance,
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    static HDC WndDC = NULL;
+    static HGLRC oglCtx = NULL;
     PAINTSTRUCT ps;
     HDC hdc;
     TCHAR greeting [] = _T("Crap on you, World!");
-    TCHAR gotit [] = _T("Render is loaded!");
+    TCHAR renderPhrase[MAX_PATH];
 
     PIXELFORMATDESCRIPTOR pfd =
     {
@@ -144,9 +147,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         0,
         0,0,0
     };
-    HDC WndDC;
     int ChooseFormat;
-    HGLRC oglCtx;
     switch(message)
     {
     case WM_CREATE:
@@ -156,7 +157,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         oglCtx = wglCreateContext(WndDC);
         wglMakeCurrent(WndDC, oglCtx);
-        MessageBoxA(0, (char *) glGetString(GL_VERSION), "OPENGL VERSION", 0);
         break;
     case WM_PAINT:
         hdc = BeginPaint(hWnd, &ps);
@@ -169,8 +169,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 5, 5,
                 greeting, _tcslen(greeting));
         else
-            TextOut(hdc, 5, 5, gotit, _tcslen(gotit));
-        // End application-specific layout section.
+        {
+            USES_CONVERSION;
+            wglMakeCurrent(WndDC, oglCtx);
+            const GLubyte * strVersion(glGetString(GL_VERSION));
+            TCHAR szVersion[MAX_PATH];
+            _tcscpy_s(szVersion, MAX_PATH, A2T((char *)strVersion));
+            _stprintf_s(renderPhrase, MAX_PATH, _T("OGL Renderer Version %s is loaded"), szVersion);
+            TextOut(hdc, 5, 5, renderPhrase, _tcslen(renderPhrase));
+        }
 
         EndPaint(hWnd, &ps);
         break;
