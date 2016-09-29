@@ -1,6 +1,7 @@
 .SUFFIXES : .py .h 
 
 GEN_SWAP_TARGETS = \
+	pack_arrays_swap.c\
 	pack_bounds_swap.c \
 	pack_bufferobject_swap.c \
 	pack_client_swap.c \
@@ -37,18 +38,16 @@ PYTHON_SOURCES = \
 	pack_header.py \
 	packer_bbox.py
 
+all: $(GEN_C_TARGETS) $(GEN_H_TARGETS) $(GEN_SWAP_TARGETS) 	pack_arrays_swap.c 
+
 .py.h:
 	$(PYTHON) $< $(API_PARSER_DIR) >$@ || del $@
-
-	
-all: $(GEN_C_TARGETS) $(GEN_H_TARGETS) $(GEN_SWAP_TARGETS)
 
 $(GEN_SWAP_TARGETS):
 	$(PYTHON) pack_swap.py  $(API_PARSER_DIR) $(@F) > $(@B).c || del $(@B).c 
 
-
-pack_arrays_swap.c: pack_swap.py
-	$(PYTHON) pack_swap.py $(API_PARSER_DIR)  >$@ || del $@
+#pack_arrays_swap.c: pack_swap.py
+#	$(PYTHON) pack_swap.py $(API_PARSER_DIR)  >$@ || del $@
 
 clean:
 	del $(GEN_SWAP_TARGETS)

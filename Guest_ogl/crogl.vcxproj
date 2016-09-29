@@ -112,6 +112,12 @@
       <Version>10.0</Version>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
+    <PreBuildEvent>
+      <Command>pushd $(ProjectDir)scripts
+nmake -f Makefile
+popd
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -132,6 +138,12 @@
       <ModuleDefinitionFile>Scripts\cropengl.def</ModuleDefinitionFile>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
     </Link>
+    <PreBuildEvent>
+      <Command>pushd $(ProjectDir)scripts
+nmake -f Makefile
+popd
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -154,6 +166,12 @@
       <AdditionalDependencies>shell32.lib;gdi32.lib;user32.lib;shell32.lib;gdi32.lib;user32.lib;shell32.lib;gdi32.lib;user32.lib;shell32.lib;gdi32.lib;user32.lib;%(AdditionalDependencies);mincore.lib</AdditionalDependencies>
       <ModuleDefinitionFile>Scripts\cropengl-x86.def</ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>pushd $(ProjectDir)scripts
+nmake -f Makefile
+popd
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -177,6 +195,12 @@
       <ModuleDefinitionFile>Scripts\cropengl.def</ModuleDefinitionFile>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
     </Link>
+    <PreBuildEvent>
+      <Command>pushd $(ProjectDir)scripts
+nmake -f Makefile
+popd
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="context.c" />

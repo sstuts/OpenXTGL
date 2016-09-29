@@ -10,6 +10,7 @@
 #endif
 #pragma warning( push, 3 )
 #include <winsock2.h>
+#include <Ws2tcpip.h>
 #pragma warning( pop )
 #pragma warning( disable : 4514 )
 #pragma warning( disable : 4127 )

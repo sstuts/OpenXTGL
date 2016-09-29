@@ -148,9 +148,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="bbox.c" />
     <ClCompile Include="blitter.cpp" />
     <ClCompile Include="bmpscale.cpp" />

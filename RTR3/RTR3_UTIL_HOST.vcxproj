@@ -146,9 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="alloc-ef.h" />
     <ClInclude Include="avl_Base.cpp.h" />
     <ClInclude Include="avl_Destroy.cpp.h" />
